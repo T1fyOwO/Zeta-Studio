@@ -4,42 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zeta Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<header>
+    <div class="logo">Zeta Studio</div>
 
-        body {
-            margin: 0;
-            height: 100vh;
-            background: #101114;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-        }
+    <button id="newButton">New</button>
+    <button id="saveButton">Save .zta</button>
+    <button id="runButton">▶ Run</button>
+</header>
 
-        header {
-            height: 55px;
-            background: #18191d;
-            border-bottom: 1px solid #303238;
-            display: flex;
-            align-items: center;
-            padding: 0 14px;
-            gap: 10px;
-        }
+<main>
 
-        #title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-right: auto;
-        }
+    <section class="editor">
+        <div id="lineNumbers"></div>
 
-        button {
-            background: #25272d;
-            color: white;
-            border: 1px solid #3a3c43;
-            border-radius: 6px;
-            padding: 8px 13px;
-            cursor:
+        <textarea id="code" spellcheck="false">$ load_zeta
+$ import player_name
+
+{player_name} = Andrew
+
+$print <Hello, {player_name}!>
+
+$ terminate_code</textarea>
+    </section>
+
+    <section class="output">
+        <div class="outputHeader">
+            <span>Output</span>
+            <button id="clearButton">Clear</button>
+        </div>
+
+        <pre id="output"></pre>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
